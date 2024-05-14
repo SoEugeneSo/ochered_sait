@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создать очередь</title>
+    <link rel="stylesheet" href="C:\Users\nikoz\OneDrive\Рабочий стол\frontendtest\css\style.css">
+</head>
+<body>
+    <header>
+        <h1>Очереди</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#">О сервисе</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Создать очередь</h2>
+            <form id="create-queue-form">
+                <label for="queue-name">Название очереди</label>
+                <input type="text" id="queue-name" name="queue-name" required>
+
+                <label for="queue-description">Описание очереди</label>
+                <textarea id="queue-description" name="queue-description"></textarea>
+
+                <label for="max-participants">Максимальное количество участников</label>
+                <input type="number" id="max-participants" name="max-participants" min="1" required>
+
+                <button type="submit">Создать очередь</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Очереди. Все права защищены.</p>
+    </footer>
+
+    <script>
+        const createQueueForm = document.getElementById('create-queue-form');
+
+        createQueueForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const queueName = document.getElementById('queue-name').value;
+            const queueDescription = document.getElementById('queue-description').value;
+            const maxParticipants = document.getElementById('max-participants').value;
+
+            // Здесь можно добавить код для создания новой очереди и перенаправления на страницу очереди
+            window.location.href = `queue.html?name=${queueName}&description=${queueDescription}&maxParticipants=${maxParticipants}`;
+        });
+    </script>
+</body>
+</html>
